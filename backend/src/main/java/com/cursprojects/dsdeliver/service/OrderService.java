@@ -35,7 +35,6 @@ public class OrderService {
 	public OrderDTO insert(OrderDTO dto) {
 		Order order = new Order(null, dto.getAddress(), dto.getLatitude(), dto.getLongitude(),
 				Instant.now(), OrderStatus.PENDING);
-		/*copyDtoToEntity(dto, entity);*/
 		for (ProductDTO p : dto.getProducts()) {
 			Product product = productRepository.getReferenceById(p.getId());
 			order.getProducts().add(product);
@@ -43,19 +42,13 @@ public class OrderService {
 		order = repository.save(order);
 		return new OrderDTO(order);
 	}
-/*
-	private void copyDtoToEntity(OrderDTO dto, Order entity) {
-		entity.setAddress(dto.getAddress());
-		entity.setLatitude(dto.getLatitude());
-		entity.setLongitude(dto.getLongitude());
-		entity.setMoment(Instant.now());
-		entity.setStatus(OrderStatus.PENDING);
-		
-		entity.getProducts().clear();
-		
-		for (ProductDTO p : dto.getProducts()) {
-			Product product = productRepository.getReferenceById(p.getId());
-			entity.getProducts().add(product);
-		}
-	}*/
+	
+	@Transactional
+	public OrderDTO setDelivered(Long id) {
+		Order order = repository.getReferenceById(id);
+		order.setStatus(OrderStatus.DELIVERED);
+		order = repository.save(order);
+		return new OrderDTO(order);
+	}
+
 }

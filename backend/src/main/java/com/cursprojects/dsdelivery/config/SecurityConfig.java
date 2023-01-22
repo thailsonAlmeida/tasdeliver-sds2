@@ -1,5 +1,5 @@
 package com.cursprojects.dsdelivery.config;
-
+/*
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,4 +38,4 @@ public class SecurityConfig {
 		source.registerCorsConfiguration("/**", configuration);
 		return source;
 	}
-}
+}*/

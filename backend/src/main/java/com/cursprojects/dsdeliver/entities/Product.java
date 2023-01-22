@@ -1,4 +1,4 @@
-package com.cursprojects.dsdelivery.entities;
+package com.cursprojects.dsdeliver.entities;
 
 import java.io.Serializable;
 import java.util.Objects;

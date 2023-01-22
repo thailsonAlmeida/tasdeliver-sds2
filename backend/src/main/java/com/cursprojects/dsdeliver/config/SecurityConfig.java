@@ -1,4 +1,4 @@
-package com.cursprojects.dsdelivery.config;
+package com.cursprojects.dsdeliver.config;
 /*
 import java.util.Arrays;
 

@@ -29,7 +29,7 @@ public class OrderDTO implements Serializable {
 		this.moment = moment;
 		this.status = status;
 	}
-	
+		
 	public OrderDTO(Order entity) {
 		id = entity.getId();
 		address = entity.getAddress();

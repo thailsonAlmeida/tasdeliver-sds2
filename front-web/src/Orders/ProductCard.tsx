@@ -1,3 +1,4 @@
+import { formatPrice } from './helpers';
 import { ReactComponent as Pizza} from './pizza.svg';
 import { Product } from './types';
 
@@ -7,14 +8,7 @@ type Props = {
     isSelected: boolean;
 };
 
-function formatPrice(price: number){
-    const formatter = new Intl.NumberFormat('pt-BR', {
-        style: 'currency',
-        currency: 'BRL',
-        minimumFractionDigits: 2
-    });
-    return formatter.format(price);
-}
+
 
 function ProductsCard ({ product, onSelectProduct, isSelected }: Props) { 
     return(

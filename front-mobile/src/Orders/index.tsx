@@ -1,6 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, ScrollView,  } from 'react-native';
 import Header from '../Header';
+import OrderCard from '../OrderCard';
 
 function Orders(){
 
@@ -11,15 +12,25 @@ function Orders(){
     return (
         <>
         <Header />
-        <View>
-            <Text>Listar Pedidos</Text>
-        </View>
+        <ScrollView style={styles.container}>
+            <OrderCard />
+            <OrderCard />
+            <OrderCard />
+            <OrderCard />
+            <OrderCard />
+            <OrderCard />
+        </ScrollView>
         </>
     );
 }
 
 const styles = StyleSheet.create(
-    {}
+    {
+        container: {
+            paddingRight: '5%',
+            paddingLeft: '5%',
+        }
+    }
 );
 
 export default Orders;
